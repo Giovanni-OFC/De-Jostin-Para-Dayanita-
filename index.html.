@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para la niña más hermosa ✨❤️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #fff;
+      text-shadow: 2px 2px 5px #ff4d6d;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
+      box-shadow: 0 0 15px #ff1493;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    #noBtn {
+      background-color: #ffffff;
+      color: #ff1493;
+      position: absolute;
+    }
+
+    img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ff69b4;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      color: #ff69b4;
+      font-size: 24px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <span>💖</span><span>❤️</span><span>💕</span><span>💞</span><span>💘</span><span>💓</span>
+  </div>
+
+  <img src="https://i.pinimg.com/originals/12/12/7e/12127e8c4bda012dc8c229f2a4b07f5e.gif" alt="corazon animado">
+
+  <h1>Para la niña más hermosa ✨❤️<br>¿Aceptarías tener un amor verdadero conmigo? 💌</h1>
+
+  <div class="buttons">
+    <button id="yesBtn">💘 Sí 💘</button>
+    <button id="noBtn">❌ No ❌</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.body.innerHTML = `
+        <h1 style="color:white; text-shadow:2px 2px 10px #ff1493;">
+          💞 Sabía que dirías que sí 💞<br>
+          ¡Te amo muchísimo! ❤️✨
+        </h1>
+        <img src="https://i.pinimg.com/originals/5d/8f/88/5d8f886b53a5a093801bc4a38455d83d.gif" width="200">
+      `;
+    });
+  </script>
+</body>
+</html>
